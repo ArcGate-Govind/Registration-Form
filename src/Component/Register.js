@@ -8,7 +8,7 @@ function App() {
     repassword: "",
     number: "",
     gander: "",
-    interest:"",
+    interest: "",
   };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
@@ -16,16 +16,11 @@ function App() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
-  
-    
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
-    
-   
-  
     
   };
 
@@ -53,18 +48,17 @@ function App() {
       errors.password = "Password are not same";
       errors.repassword = "re-Password are not same";
     }
-      if(!values.number){
-        errors.number="number is required"
-      }
-    else  if  (values.number.length === 9) {
+    if (!values.number) {
+      errors.number = "number is required";
+    } else if (values.number.length === 9) {
       errors.number = "number is require 10 digits";
     }
-    if(values.gender===" "){
-      errors.gender="fill the option"
+    if (values.gender === " ") {
+      errors.gender = "fill the option";
     }
 
-    if(!values.interest){
-      errors.interest="fill the option"
+    if (!values.interest) {
+      errors.interest = "fill the option";
     }
     return errors;
   };
@@ -75,7 +69,7 @@ function App() {
         <div class="col-3"></div>
         <div class="col-6">
           <div className="container ">
-            <form  className="mt-5 "  onSubmit={handleSubmit}>
+            <form className="mt-5 " onSubmit={handleSubmit}>
               <h1>Register Form</h1>
               <div className="ui divider"></div>
               <div className="ui form">
@@ -187,7 +181,7 @@ function App() {
                       onChange={handleChange}
                     />
                     <label class="form-check-label" for="flexCheckDefault">
-                     Coding
+                      Coding
                     </label>
                   </div>
                   <div class="form-check">
@@ -199,9 +193,8 @@ function App() {
                       id="flexCheckDefault"
                       onChange={handleChange}
                     />
-                   
                     <label class="form-check-label" for="flexCheckDefault">
-                    Web development
+                      Web development
                     </label>
                   </div>
                   <div class="form-check">
@@ -214,14 +207,11 @@ function App() {
                       onChange={handleChange}
                     />
                     <label class="form-check-label" for="flexCheckDefault">
-                     AI development
+                      AI development
                     </label>
-                   
                   </div>
-                 
                 </div>
                 <p>{formErrors.interest}</p>
-
                 <button class="btn btn-primary mt-3 w-100">Submit</button>
               </div>
             </form>
