@@ -1,11 +1,11 @@
 
 import './App.css';
-import Form from './Component/Form';
+import Register from './Component/Register'
 
 function App() {
   return (
     <div className="App">
-    <Form/>
+   <Register/>
     </div>
   );
 }
